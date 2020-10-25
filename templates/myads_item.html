@@ -1,0 +1,41 @@
+<{if $ad_exists}>
+<table cellspacing="1" class="outer" style="width:100%;">
+  <tr>
+    <th><{$add_from_title}> <{$add_from_sitename}></th>
+  </tr>
+  <tr>
+    <td class="odd" align="left"><{$nav_main}> <{$nav_sub}> (<{$nav_subcount}>)</th>
+  </tr>
+  <tr>
+    <td class="head"><{$submitter}> &nbsp;&nbsp;&nbsp; (<{$read}>)&nbsp;&nbsp;<{$modify}></td>
+  </tr>
+  <tr>
+    <td class="even"><{$admin}> <b><{$type}>: </b><{$title}></td>
+  </tr>
+  <tr>
+    <td class="odd"><br><{$description}><br><div align="center"><{$photo}></div><br></td>
+  </tr>
+  <tr>
+    <td class="odd"><b><{$price_head}></b><{$price_price}> <{$price_typeprix}></td>
+  </tr>
+  <tr>
+    <td class="odd"><b><{$contact_head}></b> <{$contact_email}> &nbsp;&nbsp; 
+    <b><{$contact_tel_head}></b> <{$contact_tel}>
+    <br><b><{$local_head}></b> <{$local_town}> <{$local_country}></td>
+  </tr>
+  <tr>
+    <td class="foot" align="right"><{$date}></td>
+  </tr>
+</table>
+<{else}>
+<div align="center"><b><{$no_ad}></b></div>
+<{/if}>
+<br><br>
+<div align="center"><b>[ <{$link_main}> | <{$link_cat}> ]</b></div>
+
+<br><br>
+<table cellspacing="0" class="outer" style="width:100%;">
+  <tr>
+    <td align="right" class="foot" style="font-weight:normal;"><span class="itemPoster"><{$cr_developed}> / <{$cr_redesigned}></span></td>
+  </tr>
+</table>

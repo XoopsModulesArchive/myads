@@ -1,0 +1,66 @@
+<script language="JavaScript" type="text/JavaScript">
+<!--
+	function CLA(CLA) { var MainWindow = window.open (CLA, "_blank","width=500,height=300,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,copyhistory=no");}
+//-->
+</script>
+<table cellspacing="1" class="outer" style="width:100%;">
+  <tr>
+    <th><{$add_from_title}> <{$add_from_sitename}></th>
+  </tr>
+  <tr>
+    <td class="head" align="center" style="padding:10px 10px 10px 10px;"><{$add_annonce}></th>
+  </tr>
+  <tr>
+    <td class="odd" align="left"><{$nav_main}> <{$nav_sub}> (<{$nav_subcount}>)</th>
+  </tr>
+  <tr>
+    <td class="even" align="left"><{$availability}></th>
+  </tr>
+  <{if $moderated}>
+	  <{if $xoops_isadmin}>
+	  <tr>
+	    <td align="center" class="even">
+	    <table class="outer" cellspacing="0" style="width:50%;">
+		  <tr>
+		    <td class="head" align="center"><{$admin_block}></td>
+		  </tr>
+		  <tr>
+		    <td class="odd" align="center"><{$confirm_ads}></td>
+		  </tr>
+		</td>
+		</table>
+	  </tr>
+	  <{/if}>
+  <{/if}>
+  <tr>
+  	<td class="odd">
+      <table border="0" style="width:100%;">
+		<{foreach item=cat from=$subcategories}>
+		<{math equation="i % 3" i=$cat.i assign="mod"}>
+			<{if $mod == 0}><tr><{/if}>
+			<td valign="top" align="center" style="width:33%;">
+			<table class="outer" cellspacing="0" style="width:100%;">
+			  <tr><td class="head"><{$cat.image}> <{$cat.link}> (<{$cat.adcount}>) <{$cat.new}></td></tr>
+			</table>
+			</td>
+			<{if $mod == 2 || $cat.i == $subcat_count}></tr><{/if}>
+		<{/foreach}>
+      </table>
+    </td>
+  </tr>
+  <tr>
+  	<td class="even" align="center"><{$total_annonces}><br><{$total_confirm}></td>
+  </tr>
+</table style="width:100%;">
+<br><br>
+<{if $data_rows}>
+<{include file="db:myads_adlist.html" comment=$comment}>
+<{else}>
+<div align="center"><b><{$no_data}></b></div>
+<{/if}>
+<br><{$nav_page}><br>
+<table cellspacing="0" class="outer" style="width:100%;">
+  <tr>
+    <td align="right" class="foot" style="font-weight:normal;"><span class="itemPoster"><{$cr_developed}> / <{$cr_redesigned}></span></td>
+  </tr>
+</table>
